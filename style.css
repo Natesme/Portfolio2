@@ -25,7 +25,7 @@ body {
     background-color: darkblue;
     color: white;
     width: 100%;
-    min-height: 100px;       /* lets content control height */
+    min-height: 100px;       
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,7 +36,7 @@ body {
 .header {
     position: sticky;
     top: 0;
-    z-index: 1000; /* much higher than tables */
+    z-index: 1000;
     background-color: #ddd;
     padding: 20px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
@@ -52,10 +52,10 @@ body {
     padding: 15px;
     background-color: #f4f4f4;
 
-    position: sticky; /* this keeps it visible while scrolling */
-    top: 0;           /* distance from top of viewport */
-    align-self: start; /* makes sure it stays aligned in the grid */
-    height: fit-content; /* adjusts height based on content */
+    position: sticky; 
+    top: 0;           
+    align-self: start; 
+    height: fit-content;
 }
 
 
@@ -72,8 +72,8 @@ body {
     display: grid;
     grid-template-rows: auto auto auto auto;
     gap: 30px;
-    position: relative; /* establishes new stacking context */
-    z-index: 1;         /* ensures main content stays above sidebar background if needed */
+    position: relative
+    z-index: 1;        
 }
 
 
@@ -150,8 +150,8 @@ body {
 }
 .info-table th {
     position: sticky;
-    top: 120px; /* equal to header height (or header + any top spacing) */
-    z-index: 900; /* less than header but higher than table rows */
+    top: 120px; 
+    z-index: 900; 
     background-color: #eee;
 }
 
@@ -165,7 +165,7 @@ body {
 
 /* Projects Section */
 .project-images {
-    display: flex;           /* flex row layout */
+    display: flex;          
     flex-wrap: wrap;
     gap: 10px;
     margin: 15px 0;
