@@ -25,18 +25,17 @@ body {
     background-color: darkblue;
     color: white;
     width: 100%;
-    min-height: 100px;       
+    min-height: 100px;       /* lets content control height */
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
 }
 
-/* Header */
 .header {
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1000; /* much higher than tables */
     background-color: #ddd;
     padding: 20px;
     box-shadow: 0 3px 6px rgba(0,0,0,0.1);
@@ -46,18 +45,13 @@ body {
 /* Sidebar */
 .sidebar {
     grid-area: sidebar;
-    display: flex;
+    display: flex;           /* vertical navigation items */
     flex-direction: column;
     gap: 10px;
     padding: 15px;
     background-color: #f4f4f4;
-
-    position: sticky; 
-    top: 0;           
-    align-self: start; 
-    height: fit-content;
+    overflow: visible;
 }
-
 
 .sidebar a {
     text-decoration: none;
@@ -72,8 +66,8 @@ body {
     display: grid;
     grid-template-rows: auto auto auto auto;
     gap: 30px;
-    position: relative
-    z-index: 1;        
+    position: relative; /* establishes new stacking context */
+    z-index: 1;         /* ensures main content stays above sidebar background if needed */
 }
 
 
@@ -148,10 +142,11 @@ body {
     text-align: left;
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .info-table th {
     position: sticky;
-    top: 120px; 
-    z-index: 900; 
+    top: 120px; /* equal to header height (or header + any top spacing) */
+    z-index: 900; /* less than header but higher than table rows */
     background-color: #eee;
 }
 
@@ -165,7 +160,7 @@ body {
 
 /* Projects Section */
 .project-images {
-    display: flex;          
+    display: flex;           /* flex row layout */
     flex-wrap: wrap;
     gap: 10px;
     margin: 15px 0;
