@@ -44,6 +44,7 @@ body {
 
 /* Sidebar */
 .sidebar {
+    justify-content: space-evenly; /* IE10 */
     grid-area: sidebar;
     display: flex;           /* vertical navigation items */
     flex-direction: column;
@@ -62,13 +63,18 @@ body {
 /* Main content */
 .main-content {
     grid-area: main;
-    padding: 20px;
-    display: grid;
-    grid-template-rows: auto auto auto auto;
-    gap: 30px;
-    position: relative; /* establishes new stacking context */
-    z-index: 1;         /* ensures main content stays above sidebar background if needed */
+
+    display: flex;              /* Flexbox instead of grid */
+    flex-direction: column;     /* Sections stack vertically */
+    flex-wrap: wrap;            /* Allows flexibility if needed */
+
+    padding: 30px;              /* More breathing room */
+    gap: 40px;                  /* Space between sections */
+
+    flex-grow: 1;
+    flex-shrink: 1;
 }
+
 
 
 /* Footer */
@@ -203,6 +209,7 @@ body {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .container {
+        flex-wrap: wrap;
         grid-template-columns: 120px 1fr;
         grid-template-rows: auto auto auto;
         grid-template-areas:
